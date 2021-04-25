@@ -3,5 +3,126 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "GroceryShopPortal": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/grocery-shop-portal",
+      "sourceRoot": "projects/grocery-shop-portal/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/GroceryShopPortal",
+            "index": "projects/grocery-shop-portal/src/index.html",
+            "main": "projects/grocery-shop-portal/src/main.ts",
+            "polyfills": "projects/grocery-shop-portal/src/polyfills.ts",
+            "tsConfig": "projects/grocery-shop-portal/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/grocery-shop-portal/src/favicon.ico",
+              "projects/grocery-shop-portal/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/grocery-shop-portal/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/grocery-shop-portal/src/environments/environment.ts",
+                  "with": "projects/grocery-shop-portal/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "GroceryShopPortal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "GroceryShopPortal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "GroceryShopPortal:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/grocery-shop-portal/src/test.ts",
+            "polyfills": "projects/grocery-shop-portal/src/polyfills.ts",
+            "tsConfig": "projects/grocery-shop-portal/tsconfig.spec.json",
+            "karmaConfig": "projects/grocery-shop-portal/karma.conf.js",
+            "assets": [
+              "projects/grocery-shop-portal/src/favicon.ico",
+              "projects/grocery-shop-portal/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/grocery-shop-portal/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/grocery-shop-portal/tsconfig.app.json",
+              "projects/grocery-shop-portal/tsconfig.spec.json",
+              "projects/grocery-shop-portal/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/grocery-shop-portal/e2e/protractor.conf.js",
+            "devServerTarget": "GroceryShopPortal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "GroceryShopPortal:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": "250f8263-61cc-48bd-ac1b-71eef050a893"
+  },
+  "defaultProject": "GroceryShopPortal"
 }

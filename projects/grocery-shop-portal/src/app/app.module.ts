@@ -21,7 +21,7 @@ import { CustomInterceptorService} from './common/custom-intercepto/custom-inter
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialSharedModule,
-    RouterModule.forRoot([]),
+    //RouterModule.forRoot([]),
     CustomCommonModule,
     UserModule,
     AdminModule

@@ -1,0 +1,72 @@
+<div class="container mt-5">
+    <div class="row p-4">
+        <div class="col-4 w-100">
+            <img class="fitWidth" mat-card-image [src]="productDetails?.imageUrl">
+        </div>
+        <div class="col-8">
+            <h1>{{productDetails?.productName}}</h1> 
+            <h3><strong>Price: {{productDetails?.price | currency}}</strong></h3>           
+            <div>
+                <h3><strong>Description</strong></h3>
+                <h3>{{productDetails?.description}}</h3>
+            </div>
+            <div>
+                <h3><strong>Quantity</strong></h3>
+                <select class="browser-default custom-select" placeholder="Quantity" name="qty" style="width: 10%;">
+                    <option *ngFor="let qty of [1,2,3,4,5,6,7,8,9,10]" [value]="qty">
+                        {{qty}}
+                    </option>
+                </select>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-primary" color="primary" (click)="addToCart(productDetails)">Add To Cart</button>
+                <button class="btn btn-primary" color="primary" (click)="addToWishlist(productDetails._id)">Add To WishList</button>          
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <h4>
+    {{productDetails?.productName}}
+  </h4>
+  
+  <mat-grid-list cols="4">
+    <mat-grid-tile colspan="1" rowspan="2">
+      <img class="fitWidth" mat-card-image [src]="productDetails?.imageUrl">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <mat-grid-tile-header>
+        Description
+      </mat-grid-tile-header>
+      <div>
+        {{productDetails?.description}}
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-grid-tile-header>
+        Quantity
+      </mat-grid-tile-header>
+      <div>
+        <mat-select class="matSelect" required placeholder="Quantity" name="qty">
+          <mat-option *ngFor="let qty of [1,2,3,4,5,6,7,8,9,10]" [value]="qty">
+            {{qty}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </mat-grid-tile>
+  
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-grid-tile-header>
+        Price
+      </mat-grid-tile-header>
+      <div>
+        {{productDetails?.price | currency: 'INR'}}
+      </div>
+    </mat-grid-tile>
+  
+  
+    <mat-grid-tile colspan="2" rowspan="1">
+      <button mat-raised-button color="primary" (click)="addToCart(productDetails)">Add To Cart</button>
+      <button mat-raised-button color="primary" (click)="addToWishlist(productDetails._id)">Add To WishList</button>
+    </mat-grid-tile>
+  </mat-grid-list> -->

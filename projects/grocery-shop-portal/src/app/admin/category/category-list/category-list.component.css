@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+}
+
+th.mat-header-cell{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+    padding: 5px;
+}

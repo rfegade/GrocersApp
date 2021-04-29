@@ -16,6 +16,13 @@ import { APP_CONFIG } from './AppConfig';
 import {IAppConfig} from './IAppConfig';
 import { environment } from '../../environments/environment';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 // Get api endpoint
 const AppConfig : IAppConfig = {
@@ -40,7 +47,14 @@ const AppConfig : IAppConfig = {
     ReactiveFormsModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatDividerModule,
+    MatMenuModule,
+    MatBadgeModule,
+    MatSelectModule,
+    MatButtonToggleModule,
+    MatGridListModule
   ],
   providers : [ {provide: APP_CONFIG, useValue: AppConfig }],
   exports: [
@@ -57,7 +71,14 @@ const AppConfig : IAppConfig = {
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatDividerModule,
+    MatMenuModule,
+    MatBadgeModule,
+    MatSelectModule,
+    MatButtonToggleModule,
+    MatGridListModule
   ]
 })
 export class MaterialSharedModule { }

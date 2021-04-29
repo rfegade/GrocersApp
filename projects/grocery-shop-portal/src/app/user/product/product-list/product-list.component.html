@@ -1,0 +1,30 @@
+<!-- {{productList | json}}
+
+<h1>Category: {{categoryName}}</h1>
+<div>
+    Product {{productList?.length}} of {{productCount}}
+</div> -->
+<mat-divider></mat-divider>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4" *ngFor="let product of productList;let i=index">
+            <div class="card">
+                <img class="card-img-top mx-auto mt-4" [routerLink]="[product._id]" [src]="product.imageUrl" [alt]="product.productName">
+                <div class="card-body">
+                    <h2 class="card-title">{{product.productName}}</h2>
+                    <p class="card-text">{{product.price | currency}}</p>
+                </div>  
+            </div>  
+        </div>
+    </div>
+</div>
+
+<!-- <mat-card *ngFor="let product of productList;let i=index">
+    <mat-card-header>
+        <mat-card-title>{{product.productName}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [routerLink]="[product._id]" [src]="product.imageUrl" [alt]="product.productName">
+    <div>
+      {{product.price | currency}}
+    </div>
+</mat-card> -->

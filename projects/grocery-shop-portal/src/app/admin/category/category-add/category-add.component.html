@@ -1,0 +1,25 @@
+
+<form [formGroup]="categoryForm" (submit)="saveCategories()">
+    <div formArrayName="category">
+        <div *ngFor="let category of categoryFormGroups.controls; let i=index">
+            <div [formGroupName]="i">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Category Name" formControlName="categoryName">
+                </mat-form-field>
+                    <!-- <button mat-stroked-button *ngIf="i===0" color="primary" class="ml-3" (click)="addControl()">Add</button>
+                    <button mat-stroked-button *ngIf="i>0"  color="warn" class="ml-3" (click)="removeControl(i)">Remove</button> -->
+
+                <button type="button"  mat-mini-fab color="primary" class="ml-3" (click)="addControl()">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <button type="button" mat-mini-fab color="warn" class="ml-3" (click)="removeControl(i)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+                
+            </div>
+        </div>
+    </div>
+    <div>
+        <button [disabled]="categoryForm.invalid" type="submit" mat-raised-button color="primary">Add Categories</button>
+    </div>
+</form>

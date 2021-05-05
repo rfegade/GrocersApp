@@ -5,20 +5,19 @@ import { IAppConfig } from '../../../material-shared/IAppConfig';
 import { IResponse } from '../../../common/service/IResponse';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
+export class WishlistService {
 
   constructor(private http: HttpClient,
-    @Inject(APP_CONFIG) private appConfig: IAppConfig) { }
+              @Inject(APP_CONFIG) private appConfig: IAppConfig) { }
 
-  getProfile() {
-    return this.http.get<IResponse>(this.appConfig.apiEndPoint + '/user');
+  getWishList() {
+    return this.http.get<IResponse>(this.appConfig.apiEndPoint + '/wishlist');
   }
 
-  updateProfile(userInfo: any) {
-    return this.http.put<IResponse>(this.appConfig.apiEndPoint + '/user', userInfo);
+  addProductToWishList(product: string) {
+    return this.http.post<IResponse>(this.appConfig.apiEndPoint + '/wishlist', { productId: product });
   }
 }

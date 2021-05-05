@@ -47,4 +47,8 @@ export class MainNavComponent {
     this.router.navigate(['/login']);
   }
 
+  getProduct(categoryName: string) {
+    this.router.navigate(['/user/product'], { queryParams: { 'category': categoryName } });
+  }
+
 }

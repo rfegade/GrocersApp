@@ -45,4 +45,8 @@ export class AdminProductComponent implements OnInit {
     });
   }
 
+  updateProduct(){
+    
+  }
+
 }

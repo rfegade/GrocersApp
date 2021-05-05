@@ -11,9 +11,14 @@ export class ProductService {
 
   constructor(private http: HttpClient, @Inject(APP_CONFIG) private appConfig: IAppConfig) { }
 
+  getAllProducts() {
+    return this.http.get<IResponse>(this.appConfig.apiEndPoint + '/product');
+  }
+
   getProductByCategory(categoryName : string) {
     return this.http.post<IResponse>(this.appConfig.apiEndPoint + '/product/getProductByCategory', {category : categoryName});
   }
+  
   getProductsById(id:any){
     return this.http.get<IResponse>(this.appConfig.apiEndPoint + '/product/' + id);
   }

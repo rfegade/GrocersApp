@@ -12,7 +12,7 @@ export class ProductAddComponent implements OnInit {
   productForm!: FormGroup;
   @Input() categories: any;
   @Output() addProduct = new EventEmitter<any>();
-  fileToUpload!: File;
+  fileToUpload!: File | any;
 
   constructor(private fb: FormBuilder,
     public snackBar: MatSnackBar) { }

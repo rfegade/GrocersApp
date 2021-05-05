@@ -29,4 +29,5 @@ export class AdminProductService {
   getProductList() {
     return this.http.get<IResponse>(this.appConfig.apiEndPoint + '/product');
   }
+
 }
